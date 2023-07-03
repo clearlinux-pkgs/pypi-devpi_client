@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-devpi_client
-Version  : 6.0.4
-Release  : 2
-URL      : https://files.pythonhosted.org/packages/81/a5/c2244a2d3c575f43886ade5cf44f245eb3f71387ba29fc2d4a5ac76e8979/devpi-client-6.0.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/81/a5/c2244a2d3c575f43886ade5cf44f245eb3f71387ba29fc2d4a5ac76e8979/devpi-client-6.0.4.tar.gz
+Version  : 6.0.5
+Release  : 3
+URL      : https://files.pythonhosted.org/packages/2f/df/18a27eb0b8213db917ac462364cb0612a00090a0ca4b4e189c25ee71b21c/devpi-client-6.0.5.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2f/df/18a27eb0b8213db917ac462364cb0612a00090a0ca4b4e189c25ee71b21c/devpi-client-6.0.5.tar.gz
 Summary  : devpi upload/install/... workflow commands for Python developers
 Group    : Development/Tools
 License  : MIT
@@ -76,10 +76,10 @@ python3 components for the pypi-devpi_client package.
 
 
 %prep
-%setup -q -n devpi-client-6.0.4
-cd %{_builddir}/devpi-client-6.0.4
+%setup -q -n devpi-client-6.0.5
+cd %{_builddir}/devpi-client-6.0.5
 pushd ..
-cp -a devpi-client-6.0.4 buildavx2
+cp -a devpi-client-6.0.5 buildavx2
 popd
 
 %build
@@ -87,15 +87,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681404342
+export SOURCE_DATE_EPOCH=1688409536
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
