@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-devpi_client
-Version  : 6.0.6
-Release  : 4
-URL      : https://files.pythonhosted.org/packages/12/a1/45b02b0e0bddf2cdd7cb30f428bc06c0b0adf562fc8a6e950023d736ea21/devpi-client-6.0.6.tar.gz
-Source0  : https://files.pythonhosted.org/packages/12/a1/45b02b0e0bddf2cdd7cb30f428bc06c0b0adf562fc8a6e950023d736ea21/devpi-client-6.0.6.tar.gz
+Version  : 7.0.0
+Release  : 5
+URL      : https://files.pythonhosted.org/packages/2a/b2/09a1d346fd1e809a89d2b219b0e062562c96c887d4f8fa1860a4338657e2/devpi-client-7.0.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2a/b2/09a1d346fd1e809a89d2b219b0e062562c96c887d4f8fa1860a4338657e2/devpi-client-7.0.0.tar.gz
 Summary  : devpi upload/install/... workflow commands for Python developers
 Group    : Development/Tools
 License  : MIT
@@ -17,6 +17,9 @@ Requires: pypi-devpi_client-python = %{version}-%{release}
 Requires: pypi-devpi_client-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(py)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_changelog_shortener)
+BuildRequires : pypi(wheel)
 BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
@@ -65,21 +68,19 @@ Requires: pypi(build)
 Requires: pypi(check_manifest)
 Requires: pypi(devpi_common)
 Requires: pypi(iniconfig)
-Requires: pypi(pep517)
 Requires: pypi(pkginfo)
 Requires: pypi(platformdirs)
 Requires: pypi(pluggy)
-Requires: pypi(py)
 
 %description python3
 python3 components for the pypi-devpi_client package.
 
 
 %prep
-%setup -q -n devpi-client-6.0.6
-cd %{_builddir}/devpi-client-6.0.6
+%setup -q -n devpi-client-7.0.0
+cd %{_builddir}/devpi-client-7.0.0
 pushd ..
-cp -a devpi-client-6.0.6 buildavx2
+cp -a devpi-client-7.0.0 buildavx2
 popd
 
 %build
@@ -87,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1697036175
+export SOURCE_DATE_EPOCH=1697123607
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
