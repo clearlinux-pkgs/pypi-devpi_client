@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-devpi_client
-Version  : 7.0.0
-Release  : 6
-URL      : https://files.pythonhosted.org/packages/2a/b2/09a1d346fd1e809a89d2b219b0e062562c96c887d4f8fa1860a4338657e2/devpi-client-7.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/2a/b2/09a1d346fd1e809a89d2b219b0e062562c96c887d4f8fa1860a4338657e2/devpi-client-7.0.0.tar.gz
+Version  : 7.0.1
+Release  : 7
+URL      : https://files.pythonhosted.org/packages/98/56/c41adf154c9ffac7cc136c1a6d33e59097f85a3a9ceba70453512c4862eb/devpi-client-7.0.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/98/56/c41adf154c9ffac7cc136c1a6d33e59097f85a3a9ceba70453512c4862eb/devpi-client-7.0.1.tar.gz
 Summary  : devpi upload/install/... workflow commands for Python developers
 Group    : Development/Tools
 License  : MIT
@@ -77,10 +77,10 @@ python3 components for the pypi-devpi_client package.
 
 
 %prep
-%setup -q -n devpi-client-7.0.0
-cd %{_builddir}/devpi-client-7.0.0
+%setup -q -n devpi-client-7.0.1
+cd %{_builddir}/devpi-client-7.0.1
 pushd ..
-cp -a devpi-client-7.0.0 buildavx2
+cp -a devpi-client-7.0.1 buildavx2
 popd
 
 %build
@@ -88,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1697123607
+export SOURCE_DATE_EPOCH=1697470178
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
