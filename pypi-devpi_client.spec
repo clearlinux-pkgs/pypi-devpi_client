@@ -7,7 +7,7 @@
 #
 Name     : pypi-devpi_client
 Version  : 7.0.2
-Release  : 9
+Release  : 10
 URL      : https://files.pythonhosted.org/packages/a5/4e/b2c08f24b983a3503030e8535a08dc021f7d611982cc89e972bb1a48285f/devpi-client-7.0.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a5/4e/b2c08f24b983a3503030e8535a08dc021f7d611982cc89e972bb1a48285f/devpi-client-7.0.2.tar.gz
 Summary  : devpi upload/install/... workflow commands for Python developers
