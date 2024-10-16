@@ -1,5 +1,5 @@
 PKG_NAME := pypi-devpi_client
-URL = https://files.pythonhosted.org/packages/1a/05/1d2c45f08eff14fdc37ba694e73689926bae493a2b3dabeabf90cc89a7fb/devpi_client-7.1.0.tar.gz
+URL = https://files.pythonhosted.org/packages/b1/90/ada2dd3508c1d96baf105d6d19ee8f35cec4ca33e6c15b83bddb9fe22b67/devpi-client-7.2.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
